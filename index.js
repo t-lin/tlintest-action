@@ -1,9 +1,14 @@
 const core = require('@actions/core');
 const wait = require('./wait');
-
+const github = require('@actions/github');
 
 // most @actions toolkit packages have async methods
 async function run() {
+
+  // tlin's shit
+  //console.log(github.context)
+  core.debug(JSON.stringify(github.context))
+
   try {
     const ms = core.getInput('milliseconds');
     core.info(`Waiting ${ms} milliseconds ...`);
